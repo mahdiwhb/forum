@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+</head>
+<body>
+    <main>
+        <form autocomplete="off" class="container" action="/create/post" method="POST">
+
+            <div class="wrapper bg-light">
+                <label for="title-input" class="form-label">Title</label>
+                <input maxlength="100" name="title" type="text" class="form-control" id="title-input" required>
+                <div class="form-text">Maximum of 100 characters</div>
+            </div>
+
+            <div class="wrapper bg-light">
+                <label for="text-input" class="form-label">Text</label>
+                <textarea name="text" maxlength="10000" id="text-input" rows="3" required></textarea>
+                <div class="form-text">Maximum of 10000 characters</div>
+            </div>
+
+            <div class="wrapper wrapper-tag">
+                <h6>Type your hashtag & separate them with a space.</h6>
+                <p class="form-text info">Maximum of 30 characters and no more than 50 tags</p>
+                <input type="text" id="hashtags" autocomplete="off">
+                <textarea type="text" name="tags" class="d-none" id="get-tags" required></textarea>
+                <div class="tag-container"></div>
+            </div>
+
+            <div class="btn-create-class">
+                <button type="submit" class="btn btn-success" id="btn-create"><b>Post it!</b></button>
+            </div>
+        </form>
+    </main>
+  </form>
+  
+</body>
+</html>

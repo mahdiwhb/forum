@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/singin.css">
+  </head>
+  <body>
+    <div class="container auth-form">
+      <h2>Connexion</h2>
+      <form action="/accounts/login" method="POST">
+        <!-- Login -->
+        <div class="mb-3">
+          <label for="InputLogin1" class="form-label">Nom d'utilisateur</label>
+          <input type="text" class="form-control" name="username" id="InputLogin1" pattern="[a-zA-Z0-9]+" maxlength="16"
+            placeholder="Veuillez Saisir Votre Nom d'utilisateur" required>
+        </div>
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="InputPassword1" class="form-label">Mot de passe</label>
+          <input id="password" class="form-control" name="password" type="password" pattern="^\S{6,}$"
+            placeholder="Veuillez Saisir Votre Mot de passe" required>
+        </div>
+        <!-- HIDDEN -->
+        <input type="hidden" name="next" value="{{.Path}}" />
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary">Connexion</button>
+        <div class="text-center">
+          <br>
+          <p class="warning"></p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

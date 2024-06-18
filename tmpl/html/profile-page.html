@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forum </title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+  <body>
+<div class="container main">
+  <div class="row profile">
+    <div class="col-3">
+      <div style="width: 80%; height: 80%;">
+        <img src="/img/user.png" class="card-img-top" alt="avatar">
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="conatiner">
+          <p class="font-monospace">Username: <b></b></p>
+          <p class="font-monospace">Email: <b></b></p>
+          <p class="font-monospace">Total created posts: <b></b></p>
+          <p class="font-monospace">Reputation: <b></b></p>
+          <p class="font-monospace">Joined Date: <b></b></p>
+          <p class="font-monospace"><a href="/posts/myposts?username={{.User.Username}}" class="text-decoration-none link-info"><b>See posts created by me</b></a></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

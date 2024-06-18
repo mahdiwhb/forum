@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/postpage.css">
+    <title>Forum</title>
+</head>
+  <body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 main">
+            <div class="panel panel-white post">
+                <div class="post-heading">
+                    <div class="pull-left image">
+                        <img src="/img/user.png" class="img-circle avatar" alt="user profile image">
+                    </div>
+                    <div class="pull-left meta">
+                        <div class="title h6">
+                            <a href="/profile?username={{.Post.Username}}"><b>{{.Post.Username}}</b></a>
+                            made a post.
+                        </div>
+                        <h6 class="text-muted time">{{.Post.When}}</h6>
+                    </div>
+                </div>
+                <div class="post-image">
+                    <img src="/img/1.jpg" class="image" alt="image post">
+                </div>
+                <div class="post-description">
+                    <h4></h4>
+                    <p></p>
+                    <ul class="list-inline">
+                        
+                        <li class="list-inline-item"><a href="/posts/filter?tag={{ . }}" class="badge badge-primary">#{{ . }}</a></li>
+                       
+                    </ul>
+                    <div class="stats">
+                        <a href="/vote/post?id={{.Post.ID}}&vote=1" class="btn btn-default stat-item">
+                            👍 
+                        </a>
+                        <a href="/vote/post?id={{.Post.ID}}&vote=-1" class="btn btn-default stat-item">
+                            👎 
+                        </a>
+                    </div>
+                </div>
+                <div class="post-footer">
+                    <form action="/create/comment?id={{.Post.ID}}" method="POST">
+                        <div class="input-group">
+                            <input name="text" class="form-control" placeholder="Add a comment" type="text">
+                            <button class="btn btn-success" type="submit">Post</button>
+                        </div>
+                    </form>
+                    <ul class="comments-list">
+                        
+                        <li class="comment">
+                            <a class="pull-left" href="/profile?username={{.Username}}">
+                                <img class="avatar" src="/img/user.png" alt="avatar">
+                            </a>
+                            <div class="comment-body">
+                                <div class="comment-heading">
+                                    <h4 class="user"></h4>
+                                    <h5 class="time"></h5>
+                                </div>
+                                <p></p>
+                                <div class="stats">
+                                    <a href="/vote/comment?id={{.ID}}&vote=1" class="btn btn-default stat-item">
+                                        👍 
+                                    </a>
+                                    <a href="/vote/comment?id={{.ID}}&vote=-1" class="btn btn-default stat-item">
+                                        👎 
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

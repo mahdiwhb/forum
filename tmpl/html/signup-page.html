@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forum </title>
+    <link rel="stylesheet" href="../css/singup.css">
+</head>
+  <body>
+<form action="/accounts/register" method="POST">
+<div class="auth-form">
+    <!-- Login -->
+    <div class="mb-3">
+        <label for="InputLogin1" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" maxlength="16" id="InputLogin1" placeholder="Sean"
+            pattern="[a-zA-Z0-9]+" required>
+        <div class="form-text"><i>only letters and numbers are allowed, max length is 16</i></div>
+    </div>
+    <!-- Email -->
+    <div class="mb-3">
+        <label for="InputEmail1" class="form-label">Email</label>
+        <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" type="email" class="form-control" name="email"  placeholder="sean@gmail.com"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+        <label for="InputPassword1" class="form-label">Password</label>
+        <input id="password" class="form-control" name="password" type="password" pattern="^\S{6,}$"
+            onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.confirm.pattern = this.value;"
+            placeholder="Password" required>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="mb-3">
+        <label for="InputConfirm1" class="form-label">Confirm password</label>
+        <input id="confirm" name="confirm" class="form-control" type="password" pattern="^\S{6,}$"
+            onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
+            placeholder="Verify Password" required>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</div>
+
+<!-- warning message -->
+<div class="text-center">
+    <p class="warning"></p>
+</div>
+</form>
+
+</body>
+</html>

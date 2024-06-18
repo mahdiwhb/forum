@@ -1,0 +1,93 @@
+/* Styles for form wrapper */
+.wrapper {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.wrapper.bg-light {
+  background-color: #f8f9fa;
+}
+
+.wrapper-tag {
+  margin-bottom: 20px;
+}
+
+.wrapper-tag h6 {
+  margin-bottom: 10px;
+}
+
+.wrapper-tag .info {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+/* Styles for form labels and inputs */
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+/* Styles for tag container */
+.tag-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-container .tag {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: default;
+}
+
+/* Styles for submit button */
+.btn-create-class {
+  text-align: right;
+  margin-top: 20px;
+}
+
+#btn-create {
+  padding: 10px 20px;
+}
+
+#btn-create b {
+  font-weight: bold;
+}
+
+#btn-create:hover {
+  background-color: #0069d9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 10px;
+  }
+  
+  .form-control {
+    font-size: 0.9rem;
+  }
+  
+  .btn-create-class {
+    text-align: center;
+  }
+}
