@@ -13,19 +13,16 @@ body {
   line-height: 1.6;
 }
 
-/* Container for the main content */
 .container {
   margin: 50px auto;
 }
 
-/* Navbar styling */
 .navbar-nav {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-/* Search input styling */
 .form-control {
   border: 2px solid #ccc;
   padding: 12px;
@@ -38,7 +35,6 @@ body {
   border-color: #007bff;
 }
 
-/* Button styling */
 .btn {
   border: none;
   background-color: #007bff;
@@ -59,7 +55,6 @@ body {
   background-color: #0056b3;
 }
 
-/* Main content area styling */
 .main {
   background: white;
   padding: 30px;
@@ -67,7 +62,6 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Post styling */
 .post {
   border: 1px solid #e0e0e0;
   border-radius: 15px;
@@ -80,26 +74,22 @@ body {
   transform: translateY(-5px);
 }
 
-/* Post image styling */
 .post img {
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
 }
 
-/* Post text area styling */
 .post-text {
   padding: 25px;
   position: relative;
 }
 
-/* Post title styling */
 .post-text h5 {
   color: #007bff;
   font-size: 1.6em;
   margin-bottom: 10px;
 }
 
-/* Post metadata styling */
 .post-text p {
   color: #666;
   margin-bottom: 15px;
@@ -110,7 +100,6 @@ body {
   font-style: normal;
 }
 
-/* Read more link styling */
 .stretched-link {
   text-decoration: none;
   color: #007bff;
@@ -123,7 +112,6 @@ body {
   text-decoration: underline;
 }
 
-/* Text styling for muted and reset */
 .text-muted {
   color: #999 !important;
 }
@@ -136,35 +124,10 @@ body {
   text-decoration: underline;
 }
 
-/* Add some spacing between elements */
 form .d-flex {
   gap: 5px;
 }
 
 form input, form button {
   height: 45px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .navbar-nav {
-      flex-direction: column;
-  }
-
-  .post {
-      flex-direction: column;
-  }
-
-  .post img {
-      border-radius: 15px 15px 0 0;
-  }
-
-  .post-text {
-      padding: 15px;
-  }
-
-  .stretched-link {
-      bottom: 15px;
-      right: 15px;
-  }
 }

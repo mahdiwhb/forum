@@ -1,6 +1,4 @@
-/* signin.css */
 
-/* Body styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
@@ -8,7 +6,6 @@ body {
   padding: 0;
 }
 
-/* Container styles */
 .container {
   max-width: 380px;
   margin: 50px auto;
@@ -24,7 +21,6 @@ body {
   color: #333333;
 }
 
-/* Input styles */
 .form-control {
   width: 100%;
   padding: 10px;
@@ -41,7 +37,6 @@ body {
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
-/* Button styles */
 .btn-primary {
   width: 100%;
   padding: 12px;
@@ -58,7 +53,6 @@ body {
   background-color: #0056b3;
 }
 
-/* Warning message styles */
 .warning {
   color: #dc3545;
   font-size: 14px;

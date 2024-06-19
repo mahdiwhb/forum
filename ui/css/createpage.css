@@ -63,6 +63,7 @@
 .btn-create-class {
   text-align: right;
   margin-top: 20px;
+  background-color: #007bff;
 }
 
 #btn-create {
@@ -77,17 +78,3 @@
   background-color: #0069d9;
 }
 
-/* Responsive adjustments */
-@media (max-width: 576px) {
-  .wrapper {
-    padding: 10px;
-  }
-  
-  .form-control {
-    font-size: 0.9rem;
-  }
-  
-  .btn-create-class {
-    text-align: center;
-  }
-}

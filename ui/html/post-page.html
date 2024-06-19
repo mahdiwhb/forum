@@ -28,9 +28,6 @@
                         <h6 class="text-muted time">{{.Post.When}}</h6>
                     </div>
                 </div>
-                <div class="post-image">
-                    <img src="/img/1.jpg" class="image" alt="image post">
-                </div>
                 <div class="post-description">
                     <h4>{{.Post.Title}}</h4>
                     <p>{{.Post.Text}}</p>
@@ -59,7 +56,7 @@
                         {{range .Post.Comments}}
                         <li class="comment">
                             <a class="pull-left" href="/profile?username={{.Username}}">
-                                <img class="avatar" src="/img/user.png" alt="avatar">
+                                <img class="avatar" src="../img/userr.png" alt="avatar">
                             </a>
                             <div class="comment-body">
                                 <div class="comment-heading">

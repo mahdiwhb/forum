@@ -1,6 +1,4 @@
-/* signin.css */
 
-/* Body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #e9ecef;
@@ -12,7 +10,6 @@ body {
   height: 100vh;
 }
 
-/* Container styles */
 .container {
   max-width: 400px;
   width: 100%;
@@ -30,7 +27,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Input styles */
 .form-control {
   width: 100%;
   padding: 10px;
@@ -48,7 +44,6 @@ body {
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
 }
 
-/* Button styles */
 .btn-primary {
   width: 100%;
   padding: 12px;
@@ -63,10 +58,9 @@ body {
 
 .btn-primary:hover {
   background-color: #0056b3;
-  box-shadow: 0 2px 4px rgba(0, 91, 187, 0.2);
+  box-shadow: 0 2px 4px rgb(187, 0, 0);
 }
 
-/* Warning message styles */
 .warning {
   color: #ff0019;
   font-size: 20px;

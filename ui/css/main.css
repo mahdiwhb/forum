@@ -54,13 +54,11 @@ h3 {
   padding: 20px 28px;
   margin: auto;
   width: 580px;
-  /* background-color: #273c75; */
-  /* #273c75 */
   border-radius: 30px;
   display: flex;
   align-items: center;
   flex-flow: row wrap;
-  /* border: solid 2px rgb(0, 0, 0); */
+  
 }
 
 .wrapper-tag {
@@ -103,8 +101,6 @@ h3 {
   cursor: pointer;
 }
 
-/* --------------------- */
-  
   .profile-widget {
     position: relative;
   }
@@ -143,7 +139,6 @@ h3 {
     text-align: center;
   }
   
-  /* Component: Panel */
   .panel {
     border-radius: 0;
     margin-bottom: 30px;
@@ -217,9 +212,7 @@ h3 {
     background-color: #fff;
     border-color: #ddd;
   }
-
   
-  /* Component: Posts */
   .post .post-heading {
     height: 85px;
     padding: 18px 15px;
