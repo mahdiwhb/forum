@@ -1,4 +1,8 @@
-
+{{template "base" .}}
+{{define "title"}}Profile{{end}}
+{{define "navbar"}}
+{{end}}
+{{define "content"}}
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,16 +21,16 @@
     </div>
     <div class="col-sm-6">
         <div class="conatiner">
-          <p class="font-monospace">Username: <b></b></p>
-          <p class="font-monospace">Email: <b></b></p>
-          <p class="font-monospace">Total created posts: <b></b></p>
-          <p class="font-monospace">Reputation: <b></b></p>
-          <p class="font-monospace">Joined Date: <b></b></p>
+          <p class="font-monospace">Username: <b>{{.User.Username}}</b></p>
+          <p class="font-monospace">Email: <b>{{.User.Email}}</b></p>
+          <p class="font-monospace">Total created posts: <b>{{.TotalPosts}}</b></p>
+          <p class="font-monospace">Reputation: <b>{{.User.Reputation}}</b></p>
+          <p class="font-monospace">Joined Date: <b>{{.User.CreatedAt}}</b></p>
           <p class="font-monospace"><a href="/posts/myposts?username={{.User.Username}}" class="text-decoration-none link-info"><b>See posts created by me</b></a></p>
         </div>
     </div>
   </div>
 </div>
-
+{{end}}
 </body>
 </html>

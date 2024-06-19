@@ -1,4 +1,8 @@
-
+{{template "base" .}}
+{{define "title"}}Post page{{end}}
+{{define "navbar"}}
+{{end}}
+{{define "content"}}
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,19 +32,19 @@
                     <img src="/img/1.jpg" class="image" alt="image post">
                 </div>
                 <div class="post-description">
-                    <h4></h4>
-                    <p></p>
+                    <h4>{{.Post.Title}}</h4>
+                    <p>{{.Post.Text}}</p>
                     <ul class="list-inline">
-                        
+                        {{ range .Post.Tags}}
                         <li class="list-inline-item"><a href="/posts/filter?tag={{ . }}" class="badge badge-primary">#{{ . }}</a></li>
-                       
+                        {{ end }}
                     </ul>
                     <div class="stats">
                         <a href="/vote/post?id={{.Post.ID}}&vote=1" class="btn btn-default stat-item">
-                            👍 
+                            👍 {{.Post.Votes.Likes}}
                         </a>
                         <a href="/vote/post?id={{.Post.ID}}&vote=-1" class="btn btn-default stat-item">
-                            👎 
+                            👎 {{.Post.Votes.Dislikes}}
                         </a>
                     </div>
                 </div>
@@ -52,34 +56,34 @@
                         </div>
                     </form>
                     <ul class="comments-list">
-                        
+                        {{range .Post.Comments}}
                         <li class="comment">
                             <a class="pull-left" href="/profile?username={{.Username}}">
                                 <img class="avatar" src="/img/user.png" alt="avatar">
                             </a>
                             <div class="comment-body">
                                 <div class="comment-heading">
-                                    <h4 class="user"></h4>
-                                    <h5 class="time"></h5>
+                                    <h4 class="user">{{.Username}}</h4>
+                                    <h5 class="time">{{.When}}</h5>
                                 </div>
-                                <p></p>
+                                <p>{{.Text}}</p>
                                 <div class="stats">
                                     <a href="/vote/comment?id={{.ID}}&vote=1" class="btn btn-default stat-item">
-                                        👍 
+                                        👍 {{.Votes.Likes}}
                                     </a>
                                     <a href="/vote/comment?id={{.ID}}&vote=-1" class="btn btn-default stat-item">
-                                        👎 
+                                        👎 {{.Votes.Dislikes}}
                                     </a>
                                 </div>
                             </div>
                         </li>
-                        
+                        {{end}}
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+{{end}}
 </body>
 </html>
