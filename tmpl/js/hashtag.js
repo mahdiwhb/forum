@@ -1,52 +1,44 @@
-let input, container, t;
+const TagsJoiner = '#get-tags';
+const allTags = document.querySelector(TagsJoiner);
 
-TagsJoiner = '#get-tags'
-allTags = document.querySelector(TagsJoiner)
-
-input = document.querySelector('#hashtags');
-container = document.querySelector('.tag-container');
+const input = document.querySelector('#hashtags');
+const container = document.querySelector('.tag-container');
 let hashtagArray = [];
 
-input.addEventListener('keyup', () => {
-    if (event.which == 32 && input.value.trim().length > 0 ) {
-      var text, p
-      let newtags = input.value
-      newtags.split(' ').forEach(element => {
-        if (isValid(element)) {
-          text = document.createTextNode(element);
-          p = document.createElement('p');
-          container.appendChild(p);
-          p.appendChild(text);
-          p.classList.add('tag');
-          hashtagArray.push(element)
-        }
-      });
-
-      input.value = '';
-
-      allTags.value = hashtagArray.join(' ');
-      
-      let deleteTags = document.querySelectorAll('.tag');
-      
-      for(let i = 0; i < deleteTags.length; i++) {
-        deleteTags[i].addEventListener('click', () => {
-          container.removeChild(deleteTags[i]);
-          let name = deleteTags[i].innerHTML
-          hashtagArray = hashtagArray.filter(function(value, index, arr){
-            return value != name
-          });
-          allTags.value = hashtagArray.join(' ');
+input.addEventListener('keyup', (event) => {
+    if (event.which === 32 && input.value.trim().length > 0) {
+        const newtags = input.value;
+        newtags.split(' ').forEach(element => {
+            if (isValid(element)) {
+                const text = document.createTextNode(element);
+                const p = document.createElement('p');
+                p.classList.add('tag');
+                p.appendChild(text);
+                container.appendChild(p);
+                hashtagArray.push(element);
+            }
         });
-      };
+
+        input.value = '';
+        allTags.value = hashtagArray.join(' ');
+
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                container.removeChild(tag);
+                const name = tag.innerHTML;
+                hashtagArray = hashtagArray.filter(value => value !== name);
+                allTags.value = hashtagArray.join(' ');
+            });
+        });
     }
 });
 
 function isValid(tag) {
-  if (tag=="" || hashtagArray.includes(tag)) {
-    return false
-  }
-  if (tag.length > 30 || hashtagArray.length > 50) {
-    return false
-  }
-  return true
+    if (tag === "" || hashtagArray.includes(tag)) {
+        return false;
+    }
+    if (tag.length > 30 || hashtagArray.length > 50) {
+        return false;
+    }
+    return true;
 }
