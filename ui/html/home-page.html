@@ -1,45 +1,45 @@
 {{template "base" .}}
+
 {{define "navbar"}}
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/home.css"/>
-    <title>Forum </title>
+    <title>Forum</title>
 </head>
-  <body>
-<form class="navbar-nav me-auto mb-2 mb-lg-0" action="/posts/filter" method="GET">
-  <div class="d-flex">
-    <input list="search_bar_list" value="{{.Tag}}" type="search" class="form-control rounded" name="tag" placeholder="#tag_name" aria-label="Search" aria-describedby="search-addon" />
-    <datalist id="search_bar_list"> 
-        <!-- <option value="#leetcode"></option> -->
-        {{range .Tags}}
-            <option value="#{{.}}"></option>
-        {{end}}
-    </datalist>
-    <button type="submit" class="btn"><img width="30px" height="30px" src="/img/search.png" alt=""></button>
-  </div>
-</form>
+<body>
+    <form class="navbar-nav me-auto mb-2 mb-lg-0" action="/posts/filter" method="GET">
+        <div class="d-flex">
+            <input list="search_bar_list" value="{{.Tag}}" type="search" class="form-control rounded" name="tag" placeholder="#tag_name" aria-label="Search" aria-describedby="search-addon" />
+            <datalist id="search_bar_list">
+                {{range .Tags}}
+                <option value="#{{.}}"></option>
+                {{end}}
+            </datalist>
+            <button type="submit" class="btn"><img width="30px" height="30px" src="/img/search.png" alt=""></button>
+        </div>
+    </form>
+
 {{end}}
+
 {{define "content"}}
 <div class="container main" style="width: 70%;">
-  <!--  -->
-  {{if eq .TotalPosts 0}}
-  <h3 class="text-muted">No Posts Yet. <a href="/create/post" class="text-reset">Create One</a>.</h3>
-  {{end}}
-  <!--  -->
-  {{range .Posts}}
-  <div class="d-flex position-relative bg-light post">
-    <div class="post-text">
-      <h5 class="mt-0">{{.Title}}</h5>
-      <p><i>{{.Username}} | {{.When}}</i></p>
-      <p>{{printf "%.250s" .Text}}...</p>
-      <a href="/posts?id={{.ID}}" class="stretched-link link-info"><i>En savoir plus</i></a>
+    {{if eq .TotalPosts 0}}
+    <h3 class="text-muted">No Posts Yet. <a href="/create/post" class="text-reset">Create One</a>.</h3>
+    {{end}}
+    {{range .Posts}}
+    <div class="d-flex position-relative bg-light post">
+        <div class="post-text">
+            <h5 class="mt-0">{{.Title}}</h5>
+            <p><i>{{.Username}} | {{.When}}</i></p>
+            <p>{{printf "%.250s" .Text}}...</p>
+            <a href="/posts?id={{.ID}}" class="stretched-link link-info"><i>Read More</i></a>
+        </div>
     </div>
-  </div>
-  <br>
-  {{end}}
+    <br>
+    {{end}}
 </div>
 {{end}}
 </body>
